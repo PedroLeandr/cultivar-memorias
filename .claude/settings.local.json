@@ -1,0 +1,7 @@
+{
+  "skillOverrides": {
+    "stripe-best-practices": "off",
+    "stripe-projects": "off",
+    "upgrade-stripe": "off"
+  }
+}

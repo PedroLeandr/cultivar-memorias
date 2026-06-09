@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-playfair: "Playfair Display", Georgia, serif;
+  --font-inter: "Inter", system-ui, sans-serif;
+  --green-primary: #4CAF50;
+  --green-dark: #2e7531;
+  --green-light: #dcf5dc;
+  --beige: #f8f2e6;
+  --beige-dark: #e8ddd0;
+  --earth: #faf7f2;
+  --text-primary: #1a2e1a;
+  --text-secondary: #4a5e4a;
+  --text-muted: #7a8e7a;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  color: var(--text-primary);
+  background: #ffffff;
+  font-family: var(--font-inter);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--earth);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--green-primary);
+  border-radius: 3px;
+}
+
+/* Selection */
+::selection {
+  background: #b8eab8;
+  color: var(--text-primary);
+}
+
+/* Organic background texture */
+.bg-organic {
+  background-color: var(--earth);
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(76,175,80,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(76,175,80,0.04) 0%, transparent 40%),
+    radial-gradient(ellipse at 60% 80%, rgba(180,130,80,0.05) 0%, transparent 40%);
+}
+
+.bg-hero {
+  background-color: var(--earth);
+  background-image:
+    radial-gradient(ellipse at 10% 20%, rgba(76,175,80,0.10) 0%, transparent 50%),
+    radial-gradient(ellipse at 90% 80%, rgba(76,175,80,0.07) 0%, transparent 45%);
+}
+
+/* Section divider */
+.section-divider {
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--green-primary), #86d886);
+  border-radius: 2px;
+  margin: 0 auto 1.5rem;
+}
+
+.section-divider-left {
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--green-primary), #86d886);
+  border-radius: 2px;
+  margin: 0 0 1.5rem;
+}
+
+/* Leaf decoration */
+.leaf-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 5 C25 10 30 15 20 20 C10 15 15 10 20 5Z' fill='rgba(76,175,80,0.06)' /%3E%3C/svg%3E");
+  background-size: 40px 40px;
+}
+
+/* Card hover */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(76,175,80,0.18);
+}
+
+/* Image placeholder */
+.img-placeholder {
+  position: relative;
+  overflow: hidden;
+}
+.img-placeholder::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 40%, rgba(255,255,255,0.1) 50%, transparent 60%);
+  animation: shimmer 2.5s infinite;
+}
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Timeline */
+.timeline-line {
+  background: linear-gradient(180deg, var(--green-primary) 0%, #86d886 100%);
+}
+
+/* Counter */
+.counter-value {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Focus styles */
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--green-primary);
+  box-shadow: 0 0 0 3px rgba(76,175,80,0.15);
+}
+
+/* Navigation active link */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--green-primary);
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Gradient text */
+.text-gradient {
+  background: linear-gradient(135deg, var(--green-primary), var(--green-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.88); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Leaf SVG decorations */
+.leaf-deco {
+  opacity: 0.12;
+  pointer-events: none;
+}
