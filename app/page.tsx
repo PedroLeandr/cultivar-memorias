@@ -7,6 +7,7 @@ import Goals from "@/components/Goals";
 import Gallery from "@/components/Gallery";
 import Timeline from "@/components/Timeline";
 import Stats from "@/components/Stats";
+import Donation from "@/components/Donation";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -22,6 +23,7 @@ export default function Home() {
       <Gallery />
       <Timeline />
       <Stats />
+      <Donation />
       <Contact />
       <Footer />
     </main>

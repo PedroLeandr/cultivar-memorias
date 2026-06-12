@@ -11,6 +11,7 @@ const navLinks = [
   { href: "#objetivos", label: "Objetivos" },
   { href: "#galeria", label: "Galeria" },
   { href: "#timeline", label: "Percurso" },
+  { href: "#doacoes", label: "Doações" },
   { href: "#contacto", label: "Contacto" },
 ];
 
